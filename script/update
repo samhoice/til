@@ -1,0 +1,6 @@
+#!/bin/sh
+
+script/bootstrap
+
+
+pipenv run python $(pwd)/update_readme.py
