@@ -1,8 +1,8 @@
 # Calling Django Components from a Pure Python Script
 
-In many cases, it's handy to be able to access the ORM from a pure python script. For instance, if you're writing a one-off database script, or if doing something that would be a scratch paper implementation that you'll never use again. Of course, if you think it would useful to run on the server periodically you would do better to use a Django management command. But if it's really one-off, you might prefer a pure Python script.
+In many cases, it's handy to be able to access the ORM from a pure python script. Sometimes I'm writing a one-off database script that I don't need to refer back to. Other times I'm doing something that would be a scratch paper implementation that I'll never use again. For something reusable that would useful to run on the server periodically it's often better to use a Django management command. But if it's really one-off, here's how to call django components from a pure Python script.
 
-The two steps are to configure settings and call `django.setup()`. To configure settings, either set the `DJANGO_SETTINGS_MODULE` environment variable or call `settings.configure()`. Then call `django.setup()`. So for a django project called `my_project`:
+The two steps are configuring settings and calling setup. To configure settings, either set the `DJANGO_SETTINGS_MODULE` environment variable or call `settings.configure()`. Then call `django.setup()`. So to access django componenets through a project called `my_project`:
 
 ```python
 os.environ['DJANGO_SETTINGS_MODULE'] = 'my_project.settings'
@@ -22,6 +22,8 @@ You can pass specific values to `configure`, for instance
 settings.configure(DEBUG=True)
 
 ```
+
+Don't import the django models or whatever you're trying to access until after calling `setup`.
 
 
 Links:
