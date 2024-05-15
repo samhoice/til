@@ -28,6 +28,5 @@ Don't import the django models or whatever you're trying to access until after c
 
 Links:
 
-[Django Setting Module or Configure](https://docs.djangoproject.com/en/5.0/topics/settings/#either-configure-or-django-settings-module-is-required)
-
-[Django Setup](https://docs.djangoproject.com/en/5.0/topics/settings/#calling-django-setup-is-required-for-standalone-django-usage)
+- [Django Setting Module or Configure](https://docs.djangoproject.com/en/5.0/topics/settings/#either-configure-or-django-settings-module-is-required)
+- [Django Setup](https://docs.djangoproject.com/en/5.0/topics/settings/#calling-django-setup-is-required-for-standalone-django-usage)
